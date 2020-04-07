@@ -1,0 +1,128 @@
+<html style="height: 100%"><head>
+	<meta charset="utf-8">
+	<title>Boreal - Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/img-favicon32x32.png" />
+	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap-theme.css" >
+	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap-theme.min.css" >
+	<link rel="stylesheet" href="/boreal/skeleton/css/fontawesome.css">
+	<link rel="stylesheet" href="/boreal/skeleton/css/fontawesome.min.css" >
+	<link rel="stylesheet" href="/boreal/skeleton/css/jquery.dataTables.min.css" >
+
+	<script src="/boreal/skeleton/js/jquery-3.4.1.min.js"></script>
+	<script src="/boreal/skeleton/js/bootstrap.min.js"></script>
+
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet"  type="text/css" media="screen" href="login.css" />
+	
+</head>
+<body  background="img/background.jpg" class="img-fluid" alt="Responsive image" style="background-repeat: no-repeat; background-position: center center; background-size: cover; height: 100%">
+
+      <div class="cover">
+	<div class="container-fluid"> 
+		<div class="background-image-fixed cover-image" style="background-image no-repeat; background-position: auto">
+			</div><br>
+			
+			<div class="container-fluid"> 
+				<div class="row">
+					<div class="col-md-12 text-center">
+					 <nav class="navbar navbar-inverse">
+  
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ><span class="glyphicon glyphicon-headphones"></span><strong> Boreal</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <!-- Trigger the modal with a button -->
+	<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-question-sign"></span> Sobre el Proyecto Boreal</button>
+      <!-- End Trigger the modal with a button -->
+     </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/breakTime-ArtStudio/regestry/preinscripcion.php"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container-fluid">
+   <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><strong>Ingresá tus Datos</strong></h4>
+        </div>
+        <div class="modal-body">
+        <div class="loginmodal-container">
+        <form action="formLogin.php" method="POST">
+		<input type="text" name="user" style="text-align: center" placeholder="User Name">
+		<input type="password" name="pass"  style="text-align: center" placeholder="Password">
+		<br><br>
+		<button type="submit" class="btn btn-success" data-submit="modal"><span class="glyphicon glyphicon-ok"></span> Aceptar</button>
+		<button type="reset" class="btn btn-success" data-submit="modal"><span class="glyphicon glyphicon-erase"></span> Limpiar</button><br><hr>
+		<button type="reset" class="btn btn-success" data-submit="modal"><span class="glyphicon glyphicon-exclamation-sign"></span> Ouch! Olvidé mi Password</button>
+		
+	</form>
+        </div>
+        </div>
+        <div class="modal-footer">
+        
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancelar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- End Modal -->
+  
+  
+  <!-- Modal2 -->
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><strong>Sobre Boreal</strong></h4>
+      </div>
+      <div class="modal-body">
+        <p>Boreal es un proyecto de música, algo así como una gran banda virtual.</p>
+        <p>Este proyecto siempre está abierto a la participación de músicos, sean ejecutantes de cualquier instrumento como también vocalistas.</p>
+        <p>El proyecto Boreal se caracteriza por ser un espacio abierto a todos aquellos músicos que deseen experimentar, aprender y compartir su arte.</p>
+        <p>Los músicos que deseen participar, podrán registrarse y relacionarse con otros músicos, proponer la realización ya sea de temas de autoría propia, como música de otros autores.</p>
+        <p>Boreal es un proyecto de Augusto Maza, músico y profesor de guitarra. La intención es poder expandir la creatividad de los músicos.</p>
+        <p>No tener que esperar que algún productor desee publicar sus trabajos, sino más bien volver a las fuentes sobre la creación musical, compartir ideas y conocimientos.</p>
+        <p>Al proyecto Boreal no le importa si sabes mucho o no, la idea es que entre todos colaboremos con ideas al arte de otros.</p><br><hr>
+        <p><strong>Te interesa? entonces registrate y comenzá a jugar con la música!!</strong></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Modal2 -->
+  
+  
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>
