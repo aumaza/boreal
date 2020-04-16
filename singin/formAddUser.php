@@ -1,5 +1,6 @@
-<?php  include "../functions/users.php"; ?>
-<?php  include '../conection/conection.php'; ?>
+
+<?php  include '../connection/connection.php'; ?>
+<?php  include "../functions/functions.php"; ?>
 
 
 <html><head>
@@ -53,7 +54,7 @@
                             $user = mysql_real_escape_string($_POST["user"], $conn);
                             $pass1 = mysql_real_escape_string($_POST["password"], $conn);
                             $pass2 = mysql_real_escape_string($_POST["password1"], $conn);
-                            $permisos = 0;
+                            $permisos = 1;
                             
                             agregarUser($nombre,$user,$pass1,$pass2,$permisos);
 

@@ -1,4 +1,4 @@
-<?php include "../conection/conection.php";
+<?php include "../connection/connection.php";
 
 if($conn){
 

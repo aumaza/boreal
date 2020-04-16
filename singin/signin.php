@@ -54,7 +54,7 @@
                     <div class="col-md-4"><img src="../img/add-img.jpg" class="center-block img-responsive img-thumbnail"></div>
                     <div class="col-md-8">
                         
-                        <form action="../signin/formSignIn.php" method="POST" class="form-horizontal" role="form">
+                        <form action="../singin/formSignIn.php" method="POST" class="form-horizontal" role="form">
                             <div class="form-group">
                                 <div class="col-sm-2">
                                 <h4><span class="label label-default">Nom. y Apellido</span></h4>
