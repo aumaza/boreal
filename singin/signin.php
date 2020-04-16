@@ -57,18 +57,18 @@
                         <form action="../signin/formSignin.php" method="POST" class="form-horizontal" role="form">
                             <div class="form-group">
                                 <div class="col-sm-2">
-                                <h4><span class="label label-warning">Nom. y Apellido</span></h4>
+                                <h4><span class="label label-default">Nom. y Apellido</span></h4>
 				</div>
 
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Su Nombre y Apellido" required>
+				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Su Nombre y Apellido" required>
 			</div>
 				</div>
 
 						
 	<div class="form-group">
 	<div class="col-sm-2">
-                <h5><span class="label label-warning">Sexo</span></h4><br>
+                <h5><span class="label label-default">Sexo</span></h4><br>
                 
                 <select name="sexo">
                  <option value="">Seleccionar</option>
@@ -84,9 +84,9 @@
 
 <div class="form-group">
             <div class="col-sm-2">
-            <h4><span class="label label-warning">Instrumento Ejecutado</span><br><br></h4>
+            <h4><span class="label label-default">Instrumento Ejecutado</span><br><br></h4>
             <select name="instrumento">
-              <option value="rubro">Seleccionar</option>
+              <option value="">Seleccionar</option>
               
              <?php
              
@@ -114,9 +114,9 @@
 
 <div class="form-group">
             <div class="col-sm-2">
-            <h4><span class="label label-warning">Género Musical</span><br><br></h4>
+            <h4><span class="label label-default">Género Musical</span><br><br></h4>
             <select name="genre">
-              <option value="genre">Seleccionar</option>
+              <option value="">Seleccionar</option>
               
              <?php
              
@@ -145,9 +145,9 @@
 
 <div class="form-group">
             <div class="col-sm-2">
-            <h4><span class="label label-warning">Provincias</span><br><br></h4>
+            <h4><span class="label label-default">Provincias</span><br><br></h4>
             <select name="provincia">
-              <option value="provincia">Seleccionar</option>
+              <option value="">Seleccionar</option>
               
              <?php
              
@@ -175,9 +175,9 @@
 
 <div class="form-group">
             <div class="col-sm-2">
-            <h4><span class="label label-warning">Localidad</span><br><br></h4>
+            <h4><span class="label label-default">Localidad</span><br><br></h4>
             <select name="localidad">
-              <option value="descripcion">Seleccionar</option>
+              <option value="">Seleccionar</option>
               
              <?php
              
@@ -206,7 +206,7 @@
 
 <div class="form-group">
 <div class="col-sm-2 ">
-<h4><span class="label label-warning">E-mail</span></h4>
+<h4><span class="label label-default">E-mail</span></h4>
 </div>
 <div class="col-sm-10 ">
 <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
@@ -216,7 +216,7 @@
 		
 <div class="form-group">
 <div class="col-sm-2">
-<h4><span class="label label-warning">Observaciones</span></h4>
+<h4><span class="label label-default">Observaciones</span></h4>
 </div>
 <div class="col-sm-10">
 <textarea name="descripcion" rows="4" cols="79" class="estilotextarea" placeholder="Ingrese aqui anotaciones"></textarea>
