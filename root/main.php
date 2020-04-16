@@ -98,7 +98,7 @@
       </li>
       
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-music"></span> Instrumentos
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cd"></span> Instrumentos
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="../root/instrumentos/nuevoRegistro.php"><span class="glyphicon glyphicon-upload"></span> Altas</a></li>
