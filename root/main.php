@@ -96,6 +96,15 @@
           <li><a href="../root/genre/genre.php"><span class="glyphicon glyphicon-list-alt"></span> Listados</a></li>
           </ul>
       </li>
+      
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-music"></span> Instrumentos
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="../root/instrumentos/nuevoRegistro.php"><span class="glyphicon glyphicon-upload"></span> Altas</a></li>
+          <li><a href="../root/instrumentos/instrumentos.php"><span class="glyphicon glyphicon-list-alt"></span> Listados</a></li>
+          </ul>
+      </li>
         
    
 	
