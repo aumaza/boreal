@@ -72,7 +72,7 @@
 <button type="submit" name="B" class="btn btn-default"><span class="glyphicon glyphicon-music"></span>  Music</button>
 <button type="submit" name="C" class="btn btn-default"><span class="glyphicon glyphicon-book"></span>  Teoría</button>
 <button type="submit" name="D" class="btn btn-default"><span class="glyphicon glyphicon-folder-open"></span>  Tablaturas</button>
-<button type="submit" name="E" class="btn btn-default"><span class="glyphicon glyphicon-erase"></span>  Limpiar</button>
+<button type="submit" name="E" class="btn btn-default"><span class="glyphicon glyphicon-user"></span>  Otros Usuarios</button>
 
 
 </div>
