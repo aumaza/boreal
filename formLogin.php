@@ -7,7 +7,8 @@
 	$_SESSION['pass'] = $pass1;
 	
       if($conn){
-      
+	
+	         
 	mysql_select_db('boreal');
 	
 	$sql = "SELECT * FROM usuarios where user='$user' and password='$pass1' and permisos = 1";

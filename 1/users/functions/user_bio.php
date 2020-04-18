@@ -28,7 +28,7 @@
   </script>
 	
 </head>
-<body background="../../img/background.jpg" class="img-fluid" alt="Responsive image" style="background-repeat: no-repeat; background-position: center center; background-size: cover; height: 100%">
+<body>
 
 <div class="container-fluid">
       <div class="row">
@@ -63,7 +63,7 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="navbar-brand"><strong>Provincias </strong><span class="glyphicon glyphicon-globe"></a>
+  <a class="navbar-brand"><strong>Mis Datos </strong><span class="glyphicon glyphicon-folder-open"></a>
 </div>
 
 <!-- COLLAPSIBLE NAVBAR -->
