@@ -95,7 +95,14 @@ if($conn)
               echo "<thead>
 
                     <th class='text-nowrap text-center'>ID</th>
+                    <th class='text-nowrap text-center'>Nombre y Apellido</th>
+                    <th class='text-nowrap text-center'>Sexo</th>
+                    <th class='text-nowrap text-center'>Instrumento Ejecutado</th>
+                    <th class='text-nowrap text-center'>Género Musical</th>
                     <th class='text-nowrap text-center'>Provincia</th>
+                    <th class='text-nowrap text-center'>Localidad</th>
+                    <th class='text-nowrap text-center'>E-Mail</th>
+                    <th class='text-nowrap text-center'>Observaciones</th>
                     <th>&nbsp;</th>
                     </thead>";
 
@@ -107,7 +114,14 @@ if($conn)
 			 // Listado normal
 			 echo "<tr>";
 			 echo "<td align=center>".$fila['id']."</td>";
-			 echo "<td align=center>".$fila['descripcion']."</td>";
+			 echo "<td align=center>".$fila['nombreApellido']."</td>";
+			 echo "<td align=center>".$fila['sexo']."</td>";
+			 echo "<td align=center>".$fila['instrumento']."</td>";
+			 echo "<td align=center>".$fila['genre']."</td>";
+			 echo "<td align=center>".$fila['provincia']."</td>";
+			 echo "<td align=center>".$fila['localidad']."</td>";
+			 echo "<td align=center>".$fila['email']."</td>";
+			 echo "<td align=center>".$fila['observaciones']."</td>";
 			 echo "<td class='text-nowrap'>";
 			 echo '<a href="editar.php?id='.$fila['id'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Editar</a>';
 			 echo '<a href="#" data-href="eliminar.php?id='.$fila['id'].'" data-toggle="modal" data-target="#confirm-delete" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Borrar</a>';
@@ -124,7 +138,7 @@ if($conn)
 	    echo "<br><br><hr>";
 	    echo '<button type="button" class="btn btn-primary">Cantidad de Registros:  ' .$count; echo '</button>';
 
-	      echo '<hr> <a href="/boreal/root/main.php"><input type="button" value="Volver al Menú Principal" class="btn btn-primary"></a>';
+	      //echo '<hr> <a href="/boreal/root/main.php"><input type="button" value="Volver al Menú Principal" class="btn btn-primary"></a>';
 		}
 
 
