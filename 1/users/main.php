@@ -122,10 +122,11 @@
 	<div class="panel panel-default">
 	    <div class="panel-heading">
 	    <button type="submit" class="btn btn-success navbar-btn" name="A"><span class="glyphicon glyphicon-user"></span> Mis Datos</button>
-	    <button type="submit" class="btn btn-success navbar-btn" name="B"><span class="glyphicon glyphicon-headphones"></span> Music</button>
-            <button type="submit" class="btn btn-success navbar-btn" name="C"><span class="glyphicon glyphicon-book"></span> Teoría</button>
-	    <button type="submit" class="btn btn-success navbar-btn" name="D"><span class="glyphicon glyphicon-music"></span> Tablaturas</button>
-            <button type="submit" class="btn btn-success navbar-btn" name="E"><span class="glyphicon glyphicon-eye-open"></span> Otros Usuarios</button>
+	    <button type="submit" class="btn btn-success navbar-btn" name="B"><span class="glyphicon glyphicon-headphones"></span> Mi Música</button>
+	    <button type="submit" class="btn btn-success navbar-btn" name="C"><span class="glyphicon glyphicon-headphones"></span> Musica</button>
+            <button type="submit" class="btn btn-success navbar-btn" name="D"><span class="glyphicon glyphicon-book"></span> Teoría</button>
+	    <button type="submit" class="btn btn-success navbar-btn" name="E"><span class="glyphicon glyphicon-music"></span> Tablaturas</button>
+            <button type="submit" class="btn btn-success navbar-btn" name="F"><span class="glyphicon glyphicon-eye-open"></span> Otros Usuarios</button>
             </div>
 	    
      </div>
@@ -167,6 +168,11 @@ if($conn)
 
 
                 case isset($_POST['E']):
+
+                    
+                    break;
+                    
+                case isset($_POST['F']):
 
                     others_users();
                     break;

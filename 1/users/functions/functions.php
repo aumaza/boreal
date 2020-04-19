@@ -55,9 +55,8 @@ $sql = "SELECT * FROM users where nombreApellido = '$varnombre'";
                           echo "<td align=center>".$fila['email']."</td>";
                           echo "<td align=center>".$fila['observaciones']."</td>";
                           echo "<td class='text-nowrap'>";
-                          echo '<a href="editar.php?id='.$fila['id'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Editar</a>';
-			                            
-                          echo "</td>";
+                          echo '<a href="edit.php?id='.$fila['id'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Editar</a>';
+			  echo "</td>";
                           echo "</tr>";
                          
                     }
