@@ -130,11 +130,11 @@
        <div class="col-sm-12">
 	<div class="panel panel-default">
 	    <div class="panel-heading">
-	    <a href="upload_img.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Avatar</button></a>
+	    <a href="update_avatar.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Avatar</button></a>
 	    <a href="upload_img.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-cloud-upload"></span> Subir Imagen</button></a>
-	    <button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Tablaturas</button>
-            <button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Teoría</button>
-            <button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Música</button>
+	    <a href="upload_tabs.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Tablaturas</button></a>
+            <a href="upload_theory.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Teoría</button></a>
+            <a href="upload_music.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Música</button></a>
             </div>
 	    
      </div>

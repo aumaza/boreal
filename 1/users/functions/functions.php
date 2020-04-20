@@ -146,8 +146,9 @@ function create_table_images(){
 
 $sql = "CREATE TABLE images (".
       "id INT AUTO_INCREMENT,".
-      "file_nam VARCHAR(255),".
+      "file_name VARCHAR(255),".
       "user_name VARCHAR(60),".
+      "path_folder VARCHAR(60),".
       "upload_on datetime NOT NULL,".
       "status enum('1','0') NOT NULL DEFAULT 1,".
       "PRIMARY KEY (id)); ";
@@ -174,6 +175,7 @@ $sql = "CREATE TABLE avatar (".
       "id INT AUTO_INCREMENT,".
       "file_name VARCHAR(255),".
       "user_name VARCHAR(60),".
+      "path_folder VARCHAR(60),".
       "upload_on datetime NOT NULL,".
       "status enum('1','0') NOT NULL DEFAULT 1,".
       "PRIMARY KEY (id)); ";
@@ -199,8 +201,9 @@ function create_table_tabs(){
 
 $sql = "CREATE TABLE tabs (".
       "id INT AUTO_INCREMENT,".
-      "file_nam VARCHAR(255),".
+      "file_name VARCHAR(255),".
       "user_name VARCHAR(60),".
+      "path_folder VARCHAR(60),".
       "upload_on datetime NOT NULL,".
       "status enum('1','0') NOT NULL DEFAULT 1,".
       "PRIMARY KEY (id)); ";
@@ -227,6 +230,7 @@ $sql = "CREATE TABLE theory (".
       "id INT AUTO_INCREMENT,".
       "file_nam VARCHAR(255),".
       "user_name VARCHAR(60),".
+      "path_folder VARCHAR(60),".
       "upload_on datetime NOT NULL,".
       "status enum('1','0') NOT NULL DEFAULT 1,".
       "PRIMARY KEY (id)); ";
@@ -251,8 +255,9 @@ function create_table_music(){
 
 $sql = "CREATE TABLE music (".
       "id INT AUTO_INCREMENT,".
-      "file_nam VARCHAR(255),".
+      "file_name VARCHAR(255),".
       "user_name VARCHAR(60),".
+      "path_folder VARCHAR(60),".
       "upload_on datetime NOT NULL,".
       "status enum('1','0') NOT NULL DEFAULT 1,".
       "PRIMARY KEY (id)); ";

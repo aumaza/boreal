@@ -1,6 +1,6 @@
 <html><head>
 	<meta charset="utf-8">
-	<title>Upload Images</title>
+	<title>Upload Música</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="../../img/img-favicon32x32.png" />
 	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap.min.css" >
@@ -57,14 +57,14 @@
 	die();
 	}
 	
-	 create_table_images();
+	 create_table_music();
 
 	
 	
 $statusMsg = '';
 
 // File upload path
-$targetDir = 'uploads/images/';
+$targetDir = 'uploads/music/';
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 
@@ -72,7 +72,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
 if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
     // Allow certain file formats
-    $allowTypes = array('jpg','png','jpeg','gif');
+    $allowTypes = array('mp3','ogg');
     
     if(in_array($fileType, $allowTypes)){
     
@@ -82,7 +82,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
             
             // Insert image file name into database
            
-           $sqlInsert = "INSERT INTO images ".
+           $sqlInsert = "INSERT INTO music ".
 			  "(file_name,upload_on,user_name,path_folder)".
 			  "VALUES ".
 			  "('$fileName', NOW(),'$nombre','$targetDir')";
@@ -113,7 +113,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
             $statusMsg = "\nUps. Hubo un error subiendo el Archivo";
         }
     }else{
-        $statusMsg = "\nUps, solo archivos con extensión: JPG, JPEG, PNG, GIF, son soportados.";
+        $statusMsg = "\nUps, solo archivos con extensión: MP3, OGG son soportados.";
     }
 }else{
     $statusMsg = "\nPor favor, seleccione al archivo a subir.";
