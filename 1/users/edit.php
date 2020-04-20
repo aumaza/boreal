@@ -2,6 +2,14 @@
 
 	session_start();
 	$varsession = $_SESSION['user'];
+	
+	$sql = "SELECT nombre FROM usuarios where user = '$varsession'";
+	mysql_select_db('boreal');
+        $retval = mysql_query($sql);
+        
+        while($fila = mysql_fetch_array($retval)){
+	  $nombre = $fila['nombre'];
+	  }
 	  
 	
 	if($varsession == null || $varsession = ''){
@@ -50,6 +58,22 @@
 	
 </head>
 <body>
+<!-- User Info -->
+      <div class="container-fluid">
+      <div class="row">
+      <div class="col-md-12 text-center">
+	<a href="main.php"><button><span class="glyphicon glyphicon-chevron-left"></span> Volver</button></a>
+        
+	<button><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['user'] ?></button>
+	<?php setlocale(LC_ALL,"es_ES"); ?>
+	<button><span class="glyphicon glyphicon-time"></span> <?php echo "Hora Actual: " . date("H:i"); ?></button>
+	 <?php setlocale(LC_ALL,"es_ES"); ?>
+	<button><span class="glyphicon glyphicon-calendar"></span> <?php echo "Fecha Actual: ". strftime("%A %d de %B del %Y"); ?> </button>
+	</div>
+	</div>
+	</div>
+	<br>
+	<!-- End User Info -->
 
 <div class="section"><br>
             <div class="container">
