@@ -22,6 +22,16 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet"  type="text/css" media="screen" href="login.css" />
 	
+	 <style>
+	    .avatar {
+		vertical-align: middle;
+		horizontal-align: right;
+		width: 60px;
+		height: 60px;
+		border-radius: 60%;
+		    }
+	</style>
+	
 	
 	
 </head>
@@ -72,7 +82,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
 if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
     // Allow certain file formats
-    $allowTypes = array('mp3','ogg');
+    $allowTypes = array('mp3','ogg','flac');
     
     if(in_array($fileType, $allowTypes)){
     
@@ -100,23 +110,45 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
                           echo '<div class="alert alert-success" role="alert">';
                           echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
                           echo "</div><hr>";
-                          
-            
-                //$statusMsg = "\nBase de Datos Actualizada. \nEl Archivo ".$fileName. " se ha subido correctamente.";
-                
-            }else{
-		  
-		  $statusMsg = "\nEl Archivo ".$fileName. " se ha subido correctamente.";  
-                
-            } 
+             }else{
+	      
+			  echo '<div class="alert alert-success" role="alert">';
+                          echo "\nEl Archivo ".$fileName. " se ha subido correctamente.";
+                          echo "</div><hr>";
+                          echo '<div class="alert alert-success" role="alert">';
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "</div><hr>";
+               }
+
         }else{
-            $statusMsg = "\nUps. Hubo un error subiendo el Archivo";
-        }
+        
+			  echo '<div class="alert alert-danger" role="alert">';
+                          echo "\nUps. Hubo un error subiendo el Archivo";
+                          echo "</div><hr>";
+                          echo '<div class="alert alert-success" role="alert">';
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "</div><hr>";
+            }
+        
     }else{
-        $statusMsg = "\nUps, solo archivos con extensión: MP3, OGG son soportados.";
-    }
+        
+			  echo '<div class="alert alert-danger" role="alert">';
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../img/aircraft-crash64-img.png" alt="Avatar" class="avatar" ><strong> Ups, solo archivos con extensión: MP3, OGG, FLAC son soportados.</strong>';
+			  echo "</div><hr>";
+                          echo '<div class="alert alert-success" role="alert">';
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "</div><hr>";
+	} 
+    
 }else{
-    $statusMsg = "\nPor favor, seleccione al archivo a subir.";
+    
+			  echo '<div class="alert alert-danger" role="alert">';
+                          echo "\nPor favor, seleccione al archivo a subir.";
+                          echo "</div><hr>";
+                          echo '<div class="alert alert-success" role="alert">';
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "</div><hr>";
+   
 }
 
 

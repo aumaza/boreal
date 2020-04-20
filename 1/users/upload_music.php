@@ -120,7 +120,7 @@
                     
                     <div class="alert alert-success" role="alert">
                      <h1><strong>Importante: </strong></h1>
-                     <h3>Solo suba archivos con extensión mp3/ogg.<br>De ser posible genere archivos con extensión ".ogg", ya que es un formato libre. </h3>
+                     <h3>Solo suba archivos con extensión mp3/ogg/flac.<br>De ser posible genere archivos con extensión ".ogg" o ".flac", ya que son formatos libres. </h3>
                     </div>
                     <hr>
                           
