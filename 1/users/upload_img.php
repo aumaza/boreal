@@ -1,7 +1,20 @@
 <?php include "../../connection/connection.php";
+      
 
-session_start();
+	session_start();
 	$varsession = $_SESSION['user'];
+	
+	
+	$sql = "SELECT nombre FROM usuarios where user = '$varsession'";
+	mysql_select_db('boreal');
+        $retval = mysql_query($sql);
+        
+        while($fila = mysql_fetch_array($retval)){
+	  $nombre = $fila['nombre'];
+	  }
+        
+	
+	      
 	
 	if($varsession == null || $varsession = ''){
 	echo '<div class="alert alert-danger" role="alert">';
@@ -12,51 +25,16 @@ session_start();
 	echo '<a href="../../index.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a>';	
 	die();
 	}
-
-if($conn){
-
-$sql = "CREATE TABLE genre(".
-      "id INT AUTO_INCREMENT,".
-      "descripcion VARCHAR(60),".
-      "PRIMARY KEY (id)); ";
-
-	mysql_select_db('boreal');
-	$retval = mysql_query($sql, $conn);
-	
-	if(!$retval)
-	{
-		mysql_error(); 	
-	}
-	
-	else
-	 {	
-		echo 'Table create Succesfully\n';
-	 }
-					
-		$descripcion = mysql_real_escape_string($_POST["descripcion"], $conn);
-		    
 	
 	
-$sqlInsert = "INSERT INTO genre ".
-"(descripcion)".
-"VALUES ".
-"('$descripcion')";
-
-
-$q = mysql_query($sqlInsert,$conn);
-}
-
-else{
- echo '<div class="alert alert-danger" role="alert">';
-  echo 'Could not Connect to Database: ' . mysql_error();
-  echo "</div>";
-}
-
+	
+	
+	
 ?>
 
-<html><head>
+<html style="height: 100%"><head>
 	<meta charset="utf-8">
-	<title>Estilo Musical Guardado</title>
+	<title>Subir Imagen</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="../../img/img-favicon32x32.png" />
 	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap.min.css" >
@@ -74,18 +52,54 @@ else{
 	<script src="/boreal/skeleton/js/dataTables.editor.min.js"></script>
 	<script src="/boreal/skeleton/js/dataTables.select.min.js"></script>
 	<script src="/boreal/skeleton/js/dataTables.buttons.min.js"></script>
-
+	
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet"  type="text/css" media="screen" href="login.css" />
 	
-	
+	<script>
+
+      $(document).ready(function(){
+      $('#myTable').DataTable({
+      "order": [[1, "asc"]],
+      "language":{
+        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+        "infoEmpty": "No hay registros disponibles",
+        "infoFiltered": "(filtrada de _MAX_ registros)",
+        "loadingRecords": "Cargando...",
+        "processing":     "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords":    "No se encontraron registros coincidentes",
+        "paginate": {
+          "next":       "Siguiente",
+          "previous":   "Anterior"
+        },
+      }
+    });
+
+  });
+
+  </script>
+  
+  <style>
+.avatar {
+  vertical-align: middle;
+  horizontal-align: right;
+  width: 60px;
+  height: 60px;
+  border-radius: 60%;
+}
+</style>
 	
 </head>
-<body background="../../img/background.jpg" class="img-fluid" alt="Responsive image" style="background-repeat: no-repeat; background-position: center center; background-size: cover; height: 100%">
+<body>
 
-<div class="container-fluid">
+  <!-- User Info -->
+      <div class="container-fluid">
       <div class="row">
       <div class="col-md-12 text-center">
+	<a href="main.php"><button><span class="glyphicon glyphicon-chevron-left"></span> Volver</button></a>
+        
 	<button><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['user'] ?></button>
 	<?php setlocale(LC_ALL,"es_ES"); ?>
 	<button><span class="glyphicon glyphicon-time"></span> <?php echo "Hora Actual: " . date("H:i"); ?></button>
@@ -95,51 +109,37 @@ else{
 	</div>
 	</div>
 	<br>
-
-<div class="section">
+	<!-- End User Info -->
+	
+	
+<body >
+<div class="section"><br>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Estilos Musicales</h1>
-                            </div>
-                            <div class="panel-body">
-                                <p><strong>Nuevo Estilo</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-<?php
-
-
-
-if(!$q)
-{
-  echo '<div class="alert alert-danger" role="alert">';
-  echo 'Could not enter data: ' . mysql_error();
-  echo "</div>";
-}
-
-else
-{
-    echo '<div class="alert alert-success" role="alert">';
-    echo "Registro Guardado Exitosamente!!";
-    echo "</div>";
-    echo "<br><br><br><br>";
-    echo '<hr> <a href="genre.php"><input type="button" value="Volver a Estilos Musicales" class="btn btn-primary"></a>';
-}
+<form action="form_upload_img.php" method="post" enctype="multipart/form-data">
+	  <div class="row">
+	    <div class="col-sm-12">
+	      <div class="panel panel-default">
+		<div class='panel-heading'>
+		<strong>Seleccione el Archivo a Subir:</strong>
+		<br>
+	      <input type="file" name="file" class="btn btn-default"><br>
+	      <button type="submit" class="btn btn-warning navbar-btn" name="submit"><span class="glyphicon glyphicon-cloud-upload"></span> Subir</button>
+	      
+	    </form>
+	  
+	   </div>
+	    
+     </div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
-
-	//cerramos la conexion
-	
-	mysql_close($conn);
-
-    
-?>
 
 
 

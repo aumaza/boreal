@@ -80,6 +80,16 @@
   });
 
   </script>
+  
+  <style>
+.avatar {
+  vertical-align: middle;
+  horizontal-align: right;
+  width: 60px;
+  height: 60px;
+  border-radius: 60%;
+}
+</style>
 	
 </head>
 <body>
@@ -88,7 +98,8 @@
       <div class="container-fluid">
       <div class="row">
       <div class="col-md-12 text-center">
-        <button><span class="glyphicon glyphicon-user"></span> Nombre y Apellido: <?php echo $nombre; ?></button>
+	<a href="../../logout.php"><button><span class="glyphicon glyphicon-log-out"></span> Salir</button></a>
+        
 	<button><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['user'] ?></button>
 	<?php setlocale(LC_ALL,"es_ES"); ?>
 	<button><span class="glyphicon glyphicon-time"></span> <?php echo "Hora Actual: " . date("H:i"); ?></button>
@@ -109,30 +120,47 @@
                     <div class="col-md-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                                <h1 class="panel-title text-left" contenteditable="true"><span class="glyphicon glyphicon-th-large"></span><strong> Dashboard Usuario</strong></h1>
-                            <br>
-                            <a href="../../logout.php"><button type="submit" class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-log-out"></span> Salir</button></a>
+                                <h1 class="panel-title text-left" contenteditable="true"><img src="../../img/leaf-img.png" alt="Avatar" class="avatar" ><strong> Dashboard Usuario:</strong> <?php echo $nombre; ?></h1>
+                            
                             </div>
                            
                            </div>
-                        
+                           
+      <div class="row">
+       <div class="col-sm-12">
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	    <a href="upload_img.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Avatar</button></a>
+	    <a href="upload_img.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-cloud-upload"></span> Subir Imagen</button></a>
+	    <button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Tablaturas</button>
+            <button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Teoría</button>
+            <button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Música</button>
+            </div>
+	    
+     </div>
+   </div>
+</div>
+
+                       
       <form action="main.php" method="post">
        <div class="row">
        <div class="col-sm-12">
 	<div class="panel panel-default">
 	    <div class="panel-heading">
+	    
 	    <button type="submit" class="btn btn-success navbar-btn" name="A"><span class="glyphicon glyphicon-user"></span> Mis Datos</button>
 	    <button type="submit" class="btn btn-success navbar-btn" name="B"><span class="glyphicon glyphicon-headphones"></span> Mi Música</button>
 	    <button type="submit" class="btn btn-success navbar-btn" name="C"><span class="glyphicon glyphicon-headphones"></span> Musica</button>
             <button type="submit" class="btn btn-success navbar-btn" name="D"><span class="glyphicon glyphicon-book"></span> Teoría</button>
 	    <button type="submit" class="btn btn-success navbar-btn" name="E"><span class="glyphicon glyphicon-music"></span> Tablaturas</button>
             <button type="submit" class="btn btn-success navbar-btn" name="F"><span class="glyphicon glyphicon-eye-open"></span> Otros Usuarios</button>
-            </div>
+           </div>
 	    
      </div>
    </div>
 </div>
-<hr>
+
+
 
 
 
@@ -176,8 +204,8 @@ if($conn)
 
                     others_users();
                     break;
-
-                
+                    
+                              
        }
 
 

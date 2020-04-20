@@ -115,7 +115,7 @@ $sql = "SELECT * FROM users";
                           echo "<td align=center>".$fila['genre']."</td>";
                           echo "<td align=center>".$fila['provincia']."</td>";
                           echo "<td align=center>".$fila['localidad']."</td>";
-                          echo "<td align=center>".$fila['email']."</td>";
+                          echo "<td align=center><font size=3 color= \"#003366\"><a href=\"mailto:",$fila['email'],"\">".$fila['email']."</td>";
                           echo "<td align=center>".$fila['observaciones']."</td>";
                           echo "<td class='text-nowrap'>";
                           echo "</td>";
@@ -139,6 +139,159 @@ $sql = "SELECT * FROM users";
 			
 			mysql_close($conn);  
   
+}
+
+function create_table_images(){
+
+
+$sql = "CREATE TABLE images (".
+      "id INT AUTO_INCREMENT,".
+      "file_nam VARCHAR(255),".
+      "user_name VARCHAR(60),".
+      "upload_on datetime NOT NULL,".
+      "status enum('1','0') NOT NULL DEFAULT 1,".
+      "PRIMARY KEY (id)); ";
+
+	mysql_select_db('boreal');
+	$retval = mysql_query($sql);
+	
+	if(!$retval)
+	{
+		mysql_error(); 	
+	}
+	
+	else
+	 {	
+		echo 'Table create Succesfully\n';
+	 }
+   
+}
+
+function create_table_avatar(){
+
+
+$sql = "CREATE TABLE avatar (".
+      "id INT AUTO_INCREMENT,".
+      "file_name VARCHAR(255),".
+      "user_name VARCHAR(60),".
+      "upload_on datetime NOT NULL,".
+      "status enum('1','0') NOT NULL DEFAULT 1,".
+      "PRIMARY KEY (id)); ";
+
+	mysql_select_db('boreal');
+	$retval = mysql_query($sql);
+	
+	if(!$retval)
+	{
+		mysql_error(); 	
+	}
+	
+	else
+	 {	
+		echo 'Table create Succesfully\n';
+	 }
+   
+}
+
+
+function create_table_tabs(){
+
+
+$sql = "CREATE TABLE tabs (".
+      "id INT AUTO_INCREMENT,".
+      "file_nam VARCHAR(255),".
+      "user_name VARCHAR(60),".
+      "upload_on datetime NOT NULL,".
+      "status enum('1','0') NOT NULL DEFAULT 1,".
+      "PRIMARY KEY (id)); ";
+
+	mysql_select_db('boreal');
+	$retval = mysql_query($sql);
+	
+	if(!$retval)
+	{
+		mysql_error(); 	
+	}
+	
+	else
+	 {	
+		echo 'Table create Succesfully\n';
+	 }
+   
+}
+
+function create_table_theory(){
+
+
+$sql = "CREATE TABLE theory (".
+      "id INT AUTO_INCREMENT,".
+      "file_nam VARCHAR(255),".
+      "user_name VARCHAR(60),".
+      "upload_on datetime NOT NULL,".
+      "status enum('1','0') NOT NULL DEFAULT 1,".
+      "PRIMARY KEY (id)); ";
+
+	mysql_select_db('boreal');
+	$retval = mysql_query($sql);
+	
+	if(!$retval)
+	{
+		mysql_error(); 	
+	}
+	
+	else
+	 {	
+		echo 'Table create Succesfully\n';
+	 }
+   
+}
+
+function create_table_music(){
+
+
+$sql = "CREATE TABLE music (".
+      "id INT AUTO_INCREMENT,".
+      "file_nam VARCHAR(255),".
+      "user_name VARCHAR(60),".
+      "upload_on datetime NOT NULL,".
+      "status enum('1','0') NOT NULL DEFAULT 1,".
+      "PRIMARY KEY (id)); ";
+
+	mysql_select_db('boreal');
+	$retval = mysql_query($sql);
+	
+	if(!$retval)
+	{
+		mysql_error(); 	
+	}
+	
+	else
+	 {	
+		echo 'Table create Succesfully\n';
+	 }
+   
+}
+
+
+function upload_form(){
+  
+  echo "<form action='upload.php' method='post' enctype='multipart/form-data'>
+	  <div class='row'>
+	    <div class='col-sm-12'>
+	      <div class='panel panel-default'>
+		<div class='panel-heading'>
+		<strong>Seleccione el Archivo a Subir:</strong>
+		<br>
+	      <input type='file' name='file' class='btn btn-default'><br>
+	      <button type='submit' class='btn btn-warning navbar-btn' name='save'><span class='glyphicon glyphicon-cloud-upload'></span> Subir</button>
+	      
+	    </form>
+	   </div>
+	    
+     </div>
+   </div>
+</div>";
+
 }
 
 
