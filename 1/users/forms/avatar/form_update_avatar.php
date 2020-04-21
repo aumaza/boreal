@@ -1,8 +1,8 @@
 <html><head>
 	<meta charset="utf-8">
-	<title>Upload Teoría</title>
+	<title>Upload Images</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="../../img/img-favicon32x32.png" />
+	<link rel="icon" type="image/png" href="../../../../img/img-favicon32x32.png" />
 	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap.min.css" >
 	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap-theme.css" >
 	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap-theme.min.css" >
@@ -32,8 +32,8 @@
                 <div class="row">
                     <div class="col-md-12">
 
-<?php include "../../connection/connection.php";
-      include "functions/functions.php";
+<?php include "../../../../connection/connection.php";
+      include "../../functions/functions.php";
 
 	session_start();
 	$varsession = $_SESSION['user'];
@@ -53,18 +53,18 @@
 	echo '<br>';
 	echo "O no tiene permisos o no ha iniciado sesion...";
 	echo "</div>";
-	echo '<a href="../../index.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a>';	
+	echo '<a href="../../../../index.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a>';	
 	die();
 	}
 	
-	 create_table_theory();
+	 create_table_avatar();
 
 	
 	
 $statusMsg = '';
 
 // File upload path
-$targetDir = 'uploads/theory/';
+$targetDir = '../../uploads/avatar/';
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 
@@ -72,7 +72,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
 if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
     // Allow certain file formats
-    $allowTypes = array('pdf');
+    $allowTypes = array('jpg','png','jpeg','gif');
     
     if(in_array($fileType, $allowTypes)){
     
@@ -82,10 +82,10 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
             
             // Insert image file name into database
            
-           $sqlInsert = "INSERT INTO theory ".
-			  "(file_name,upload_on,user_name,path_folder)".
+           $sqlInsert = "INSERT INTO images ".
+			  "(file_nam,upload_on,user_name)".
 			  "VALUES ".
-			  "('$fileName', NOW(),'$nombre','$targetDir')";
+			  "('$fileName', NOW(),'$nombre')";
 
 			  mysql_select_db('boreal');
 			  $insert = mysql_query($sqlInsert);
@@ -113,7 +113,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
             $statusMsg = "\nUps. Hubo un error subiendo el Archivo";
         }
     }else{
-        $statusMsg = "\nUps, solo archivos con extensión: PDF son soportados.";
+        $statusMsg = "\nUps, solo archivos con extensión: JPG, JPEG, PNG, GIF, son soportados.";
     }
 }else{
     $statusMsg = "\nPor favor, seleccione al archivo a subir.";

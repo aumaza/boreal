@@ -1,4 +1,4 @@
-<?php include "../../connection/connection.php";
+<?php include "../../../../connection/connection.php";
       
 
 	session_start();
@@ -22,7 +22,7 @@
 	echo '<br>';
 	echo "O no tiene permisos o no ha iniciado sesion...";
 	echo "</div>";
-	echo '<a href="../../index.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a>';	
+	echo '<a href="../../../../index.html"><br><br><button type="submit" class="btn btn-primary">Aceptar</button></a>';	
 	die();
 	}
 	
@@ -34,9 +34,9 @@
 
 <html style="height: 100%"><head>
 	<meta charset="utf-8">
-	<title>Subir Música</title>
+	<title>Update Avatar</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="../../img/img-favicon32x32.png" />
+	<link rel="icon" type="image/png" href="../../../../img/img-favicon32x32.png" />
 	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap.min.css" >
 	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap-theme.css" >
 	<link rel="stylesheet" href="/boreal/skeleton/css/bootstrap-theme.min.css" >
@@ -98,7 +98,7 @@
       <div class="container-fluid">
       <div class="row">
       <div class="col-md-12 text-center">
-	<a href="main.php"><button><span class="glyphicon glyphicon-chevron-left"></span> Volver</button></a>
+	<a href="../../main.php"><button><span class="glyphicon glyphicon-chevron-left"></span> Volver</button></a>
         
 	<button><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['user'] ?></button>
 	<?php setlocale(LC_ALL,"es_ES"); ?>
@@ -117,14 +117,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                    
-                    <div class="alert alert-success" role="alert">
-                     <h1><strong>Importante: </strong></h1>
-                     <h3>Solo suba archivos con extensión mp3/ogg/flac.<br>De ser posible genere archivos con extensión ".ogg" o ".flac", ya que son formatos libres. </h3>
-                    </div>
-                    <hr>
-                          
-<form action="form_upload_music.php" method="post" enctype="multipart/form-data">
+<form action="form_update_avatar.php" method="post" enctype="multipart/form-data">
 	  <div class="row">
 	    <div class="col-sm-12">
 	      <div class="panel panel-default">
