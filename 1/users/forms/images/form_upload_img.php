@@ -22,6 +22,15 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet"  type="text/css" media="screen" href="login.css" />
 	
+	<style>
+	    .avatar {
+		vertical-align: middle;
+		horizontal-align: right;
+		width: 60px;
+		height: 60px;
+		border-radius: 60%;
+		    }
+	</style>
 	
 	
 </head>
@@ -89,39 +98,55 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
 
 			  mysql_select_db('boreal');
 			  $insert = mysql_query($sqlInsert);
-           // mysql_select_db('boreal');
-           //$insert = mysql_query("INSERT into images (file_name, upload_on,user_name) VALUES ('".$fileName."', NOW(),'$nombre')");
-           
+                     
             if($insert){
             
 			  echo '<div class="alert alert-success" role="alert">';
-                          echo "\nBase de Datos Actualizada. \nEl Archivo ".$fileName. " se ha subido correctamente.";
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/success-img.png" alt="Avatar" class="avatar" ><strong> Base de Datos Actualizada. El Archivo '.$fileName. ' se ha subido correctamente..</strong>';
                           echo "</div><hr>";
                           echo '<div class="alert alert-success" role="alert">';
-                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
                           echo "</div><hr>";
-                          
-            
-                //$statusMsg = "\nBase de Datos Actualizada. \nEl Archivo ".$fileName. " se ha subido correctamente.";
+               
                 
             }else{
 		  
-		  $statusMsg = "\nEl Archivo ".$fileName. " se ha subido correctamente.";  
+			  echo '<div class="alert alert-success" role="alert">';
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/success-img.png" alt="Avatar" class="avatar" ><strong>El Archivo '.$fileName. ' se ha subido correctamente.</strong>';
+                          echo "</div><hr>";
+                          echo '<div class="alert alert-success" role="alert">';
+                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "</div><hr>";
                 
             } 
         }else{
-            $statusMsg = "\nUps. Hubo un error subiendo el Archivo";
+			  echo '<div class="alert alert-warning" role="alert">';
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/think-img.png" alt="Avatar" class="avatar" ><strong> Ups. Hubo un error subiendo el Archivo.</strong>';
+                          echo "</div><hr>";
+                          echo '<div class="alert alert-success" role="alert">';
+                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "</div><hr>";
         }
     }else{
-        $statusMsg = "\nUps, solo archivos con extensión: JPG, JPEG, PNG, GIF, son soportados.";
+    
+			  echo '<div class="alert alert-danger" role="alert">';
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/aircraft-crash64-img.png" alt="Avatar" class="avatar" ><strong> Ups, solo archivos con extensión: JPG, JPEG, PNG, GIF, son soportados.</strong>';
+			  echo "</div><hr>";
+                          echo '<div class="alert alert-success" role="alert">';
+                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "</div><hr>";
+        
     }
 }else{
-    $statusMsg = "\nPor favor, seleccione al archivo a subir.";
+			  echo '<div class="alert alert-info" role="alert">';
+                          echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/refresh-img.png" alt="Avatar" class="avatar" ><strong> Por favor, seleccione al archivo a subir.</strong>';
+                          echo "</div><hr>";
+                          echo '<div class="alert alert-success" role="alert">';
+                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "</div><hr>";
 }
 
 
-// Display status message
-echo $statusMsg;
 
 ?>
 

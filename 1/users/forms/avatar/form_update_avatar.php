@@ -22,7 +22,15 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet"  type="text/css" media="screen" href="login.css" />
 	
-	
+	<style>
+	    .avatar {
+		vertical-align: middle;
+		horizontal-align: right;
+		width: 60px;
+		height: 60px;
+		border-radius: 60%;
+		    }
+	</style>
 	
 </head>
 <body>

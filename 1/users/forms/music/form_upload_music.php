@@ -99,9 +99,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
 
 			  mysql_select_db('boreal');
 			  $insert = mysql_query($sqlInsert);
-           // mysql_select_db('boreal');
-           //$insert = mysql_query("INSERT into images (file_name, upload_on,user_name) VALUES ('".$fileName."', NOW(),'$nombre')");
-           
+          
             if($insert){
             
 			  echo '<div class="alert alert-success" role="alert">';
