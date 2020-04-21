@@ -85,7 +85,7 @@ else{
 <body>
 
 <div class="section">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
@@ -119,9 +119,9 @@ else
     echo "</div>";
     echo "<br><br><br><br>";
     echo '<div class="alert alert-warning" role="alert">';
-    echo "Por Favor, continúe con la creación de un Usuario, con el cuál podrá ingresar más tarde y consultar horarios y fechas de las Actividades.";
+    echo "Continuá con la creación de un Usuario, con el cuál podrás ingresar a la WEB.";
     echo "</div>";
-    echo '<hr> <a href="adduser.html"><input type="button" value="Registrarse" class="btn btn-primary"></a>';
+    echo '<hr> <a href="adduser.php?nombre='.$nombreApellido.'"><input type="button" value="Crear Usuario" class="btn btn-primary"></a>';
 }
 
 

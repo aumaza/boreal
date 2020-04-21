@@ -59,30 +59,8 @@
                             agregarUser($nombre,$user,$pass1,$pass2,$permisos);
 
 
-                             } else if (isset($_POST['B'])) {
-
-                                        
-                                        $nombre = mysql_real_escape_string($_POST["nombre"], $conn);
-                                        buscarUser($nombre);
-
-                                      } else if (isset($_POST['C'])) {
-
-                                        $user = mysql_real_escape_string($_POST["user"], $conn);
-                                        $pass1 = mysql_real_escape_string($_POST["password"], $conn);
-                                        $pass2 = mysql_real_escape_string($_POST["password1"], $conn);
-                                        updatePass($user,$pass1,$pass2);
-
-                                      } else if (isset($_POST['D'])) {
-
-                                        $user = mysql_real_escape_string($_POST["user"], $conn);
-                                        $pass1 = mysql_real_escape_string($_POST["password"], $conn);
-                                        $pass2 = mysql_real_escape_string($_POST["password1"], $conn);
-                                        $permisos = mysql_real_escape_string($_POST["permisos"], $conn);
-                                        cambiarPermisos($user,$pass1,$pass2,$permisos);
-
-                                      }
-
-                                    } else {
+                             } 
+                             } else {
 
                                       mysql_error();
 

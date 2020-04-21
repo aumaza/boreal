@@ -15,15 +15,15 @@ $sql = "SELECT * FROM users where nombreApellido = '$varnombre'";
             
             
       echo "<div class='row'>
-       <div class='col-sm-12'>
-	<div class='panel panel-default'>
-	    <div class='panel-heading'>";
-	    echo "Mis Datos";
-	    echo "</div>
+	      <div class='col-sm-12'>
+		<div class='panel panel-default'>
+		  <div class='panel-heading'>
+		<h1 class='panel-title text-left' contenteditable='true'><span class='glyphicon glyphicon-user'></span><strong> Mis Datos</strong></h1>
+		</div>
 	    
-     </div>
-   </div>
-</div>";
+		</div>
+	      </div>
+	    </div>";
 
                     echo "<table class='table table-responsive-sm table-striped' id='myTable'>";
                     echo "<thead>

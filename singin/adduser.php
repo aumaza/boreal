@@ -1,3 +1,10 @@
+<?php include "../connection/connection.php";
+
+	
+	  
+	
+?>
+
 <html lang="es">
 <head>
 
@@ -24,7 +31,7 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet"  type="text/css" media="screen" href="login.css" />
 </head>
-<body background="../img/background.jpg" class="img-fluid" alt="Responsive image" style="background-repeat: no-repeat; background-position: center center; background-size: cover">
+<body>
 
         <div class="section"><br>
             <div class="container">
@@ -80,7 +87,7 @@
                                     <label for="nombre" class="control-label">Nombre</label>
 				</div>
 				<div class="col-sm-10">
-				<input type="text" class="form-control" id="nome" name="nombre" placeholder="Nombre y Apellido" required>
+				<input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $_GET['nombre']; ?>" readonly>
 				</div>
 				</div>
 
@@ -115,8 +122,6 @@
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" name="A" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>  Agregar</button>
-							<button type="submit" name="B" class="btn btn-info"><span class="glyphicon glyphicon-search"></span>  Buscar</button>
-							<button type="submit" name="C" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>  Update Password</button>
 							<button type="reset" class="btn btn-primary"><span class="glyphicon glyphicon-erase"></span>  Limpiar</button>
 							
 
