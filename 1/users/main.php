@@ -130,7 +130,7 @@
        <div class="col-sm-12">
 	<div class="panel panel-default">
 	    <div class="panel-heading">
-	    <h4>Todo el material que subas será visto por todos los usuarios de Boreal</h4>
+	    <h4><strong>El material dentro de Boreal es compartido y usado por todos.</strong></h4>
 	    <a href="forms/avatar/update_avatar.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Avatar</button></a>
 	    <a href="forms/images/upload_img.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-cloud-upload"></span> Subir Imagen</button></a>
 	    <a href="forms/tabs/upload_tabs.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Tablaturas</button></a>
@@ -150,11 +150,10 @@
 	    <div class="panel-heading">
 	    
 	    <button type="submit" class="btn btn-success navbar-btn" name="A"><span class="glyphicon glyphicon-user"></span> Mis Datos</button>
-	    <button type="submit" class="btn btn-success navbar-btn" name="B"><span class="glyphicon glyphicon-headphones"></span> Mi Música</button>
-	    <button type="submit" class="btn btn-success navbar-btn" name="C"><span class="glyphicon glyphicon-headphones"></span> Musica</button>
-            <button type="submit" class="btn btn-success navbar-btn" name="D"><span class="glyphicon glyphicon-book"></span> Teoría</button>
-	    <button type="submit" class="btn btn-success navbar-btn" name="E"><span class="glyphicon glyphicon-music"></span> Tablaturas</button>
-            <button type="submit" class="btn btn-success navbar-btn" name="F"><span class="glyphicon glyphicon-eye-open"></span> Otros Usuarios</button>
+	    <button type="submit" class="btn btn-success navbar-btn" name="B"><span class="glyphicon glyphicon-headphones"></span> Musica</button>
+            <button type="submit" class="btn btn-success navbar-btn" name="C"><span class="glyphicon glyphicon-book"></span> Teoría</button>
+	    <button type="submit" class="btn btn-success navbar-btn" name="D"><span class="glyphicon glyphicon-music"></span> Tablaturas</button>
+            <button type="submit" class="btn btn-success navbar-btn" name="E"><span class="glyphicon glyphicon-eye-open"></span> Otros Usuarios</button>
            </div>
 	    
      </div>
@@ -182,28 +181,29 @@ if($conn)
 
                case isset($_POST['B']):
 
-                   
+                    cargar_music();
                     break;
 
                 case isset($_POST['C']):
 
-                   
+                    cargar_theory();
                     break;
 
                 case isset($_POST['D']):
 
-                    
+                    cargar_tabs();
                     break;
 
 
                 case isset($_POST['E']):
 
                     
+                    others_users();
                     break;
                     
                 case isset($_POST['F']):
 
-                    others_users();
+                    
                     break;
                     
                               

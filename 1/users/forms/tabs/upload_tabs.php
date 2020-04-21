@@ -113,6 +113,18 @@
 	
 	
 <body >
+
+<div class="section"><br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <div class="alert alert-success" role="alert">
+                     <h1><strong>Importante: </strong></h1>
+                     <h3>Procure que las tablaturas o partituras, sean legibles y comprensibles.<br>Tengamos en cuenta, que habrá usuarios avanzados y otros no tanto.</h3>
+                    </div>
+                    <hr>
+                    
 <div class="section"><br>
             <div class="container-fluid">
                 <div class="row">

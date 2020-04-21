@@ -93,7 +93,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
            $sqlInsert = "INSERT INTO tabs ".
 			  "(file_name,upload_on,user_name,path_folder)".
 			  "VALUES ".
-			  "('$fileName', NOW(),'$nombre','$targetDir)";
+			  "('$fileName', NOW(),'$nombre','$targetDir')";
 
 			  mysql_select_db('boreal');
 			  $insert = mysql_query($sqlInsert);

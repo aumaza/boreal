@@ -113,6 +113,19 @@
 	
 	
 <body >
+
+<div class="section"><br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <div class="alert alert-success" role="alert">
+                     <h1><strong>Importante: </strong></h1>
+                     <h3>Al subir imágenes, procure que no aparezcan niños en las mismas.<br>Como así tampoco que sean de mal gusto u obscenas. </h3>
+                    </div>
+                    <hr>
+
+
 <div class="section"><br>
             <div class="container-fluid">
                 <div class="row">

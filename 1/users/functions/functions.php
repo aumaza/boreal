@@ -81,9 +81,9 @@ $sql = "SELECT * FROM users";
        echo "<div class='row'>
 	      <div class='col-sm-12'>
 		<div class='panel panel-default'>
-		  <div class='panel-heading'>";
-		echo "Otros Usuarios";
-		echo "</div>
+		  <div class='panel-heading'>
+		<h1 class='panel-title text-left' contenteditable='true'><span class='glyphicon glyphicon-eye-open'></span><strong> Otros Usuarios</strong></h1>
+		</div>
 	    
 		</div>
 	      </div>
@@ -228,7 +228,7 @@ function create_table_theory(){
 
 $sql = "CREATE TABLE theory (".
       "id INT AUTO_INCREMENT,".
-      "file_nam VARCHAR(255),".
+      "file_name VARCHAR(255),".
       "user_name VARCHAR(60),".
       "path_folder VARCHAR(60),".
       "upload_on datetime NOT NULL,".
@@ -298,6 +298,246 @@ function upload_form(){
 </div>";
 
 }
+
+
+function get_tabs(){
+  
+  $folder = "uploads/tabs/";
+  
+  
+  if($dir = opendir($folder)){
+  
+  echo "<div class='row'>
+	      <div class='col-sm-12'>
+		<div class='panel panel-default'>
+		  <div class='panel-heading'>
+		    <h3>Tablaturas</h3>
+		   </div>
+	    
+		</div>
+	      </div>
+	    </div>
+	    
+	      <div class='row'>
+		    <div class='col-sm-12'>
+		      <div class='panel panel-default'>
+			<div class='panel-heading'>";
+    
+    while($file = readdir($dir)){
+    
+    if($file != "." && $file != ".."){
+      
+      	    echo "<a href='$folder'><strong> $file </strong></a><br>";
+	      
+    }
+  }
+  
+  echo "</div>
+	  </div>
+	    </div>
+	      </div>";
+  }
+  
+}
+
+function cargar_tabs(){
+  
+  $sql = "SELECT * FROM tabs";
+         mysql_select_db('boreal');
+            $retval = mysql_query($sql);
+              
+
+                    $i = 0;
+                    $count = 0;
+                    
+       echo "<div class='row'>
+	      <div class='col-sm-12'>
+		<div class='panel panel-default'>
+		  <div class='panel-heading'>
+		<h1 class='panel-title text-left' contenteditable='true'><span class='glyphicon glyphicon-music'></span><strong> Tablaturas</strong></h1>
+		</div>
+	    
+		</div>
+	      </div>
+	    </div>";
+
+
+                    echo "<table class='table table-responsive-sm table-striped' id='myTable'>";
+                    echo "<thead>
+              
+                    <th class='text-nowrap text-center'>Nombre Archivo</th>
+                    <th class='text-nowrap text-center'>Subido por</th>
+                    <th class='text-nowrap text-center'>Fecha</th>
+                    <th>&nbsp;</th>
+                    </thead>";
+
+                    while($fila = mysql_fetch_array($retval))
+                    {
+
+                          // Listado normal
+                          echo "<tr>";   
+                          echo "<td align=center>".$fila['file_name']."</td>";
+                          echo "<td align=center>".$fila['user_name']."</td>";
+                          echo "<td align=center>".$fila['upload_on']."</td>";
+                          echo "<td class='text-nowrap'>";
+                          echo '<a href="download_tabs.php?file_name='.$fila['file_name'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-save"></span> Descargar</a>';
+                          echo "</td>";
+                          echo "</tr>";
+                          $i++;
+                          $count++;
+                    }
+      
+                        echo "</table>";
+                        echo "<br><br><hr>";
+                        echo "<div class='row'>
+				<div class='col-sm-12'>
+				  <div class='panel panel-default'>
+				    <div class='panel-heading'>";
+			echo '<button type="button" class="btn btn-primary">Cantidad de Archivos:  ' .$count; echo '</button>';
+			echo "</div>
+	    
+				    </div>
+				</div>
+			      </div>";
+			
+			mysql_close($conn);  
+ 
+  
+}
+
+
+function cargar_theory(){
+  
+  $sql = "SELECT * FROM theory";
+         mysql_select_db('boreal');
+            $retval = mysql_query($sql);
+              
+
+                    $i = 0;
+                    $count = 0;
+                    
+       echo "<div class='row'>
+	      <div class='col-sm-12'>
+		<div class='panel panel-default'>
+		  <div class='panel-heading'>
+		<h1 class='panel-title text-left' contenteditable='true'><span class='glyphicon glyphicon-book'></span><strong> Material Teórico</strong></h1>
+		</div>
+	    
+		</div>
+	      </div>
+	    </div>";
+
+
+                    echo "<table class='table table-responsive-sm table-striped' id='myTable'>";
+                    echo "<thead>
+              
+                    <th class='text-nowrap text-center'>Nombre Archivo</th>
+                    <th class='text-nowrap text-center'>Subido por</th>
+                    <th class='text-nowrap text-center'>Fecha</th>
+                    <th>&nbsp;</th>
+                    </thead>";
+
+                    while($fila = mysql_fetch_array($retval))
+                    {
+
+                          // Listado normal
+                          echo "<tr>";   
+                          echo "<td align=center>".$fila['file_name']."</td>";
+                          echo "<td align=center>".$fila['user_name']."</td>";
+                          echo "<td align=center>".$fila['upload_on']."</td>";
+                          echo "<td class='text-nowrap'>";
+                          echo '<a href="download_theory.php?file_name='.$fila['file_name'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-save"></span> Descargar</a>';
+                          echo "</td>";
+                          echo "</tr>";
+                          $i++;
+                          $count++;
+                    }
+      
+                        echo "</table>";
+                        echo "<br><br><hr>";
+                        echo "<div class='row'>
+				<div class='col-sm-12'>
+				  <div class='panel panel-default'>
+				    <div class='panel-heading'>";
+			echo '<button type="button" class="btn btn-primary">Cantidad de Archivos:  ' .$count; echo '</button>';
+			echo "</div>
+	    
+				    </div>
+				</div>
+			      </div>";
+			
+			mysql_close($conn);  
+  
+   
+}
+
+
+function cargar_music(){
+  
+  $sql = "SELECT * FROM music";
+         mysql_select_db('boreal');
+            $retval = mysql_query($sql);
+              
+
+                    $i = 0;
+                    $count = 0;
+                    
+       echo "<div class='row'>
+	      <div class='col-sm-12'>
+		<div class='panel panel-default'>
+		  <div class='panel-heading'>
+		<h1 class='panel-title text-left' contenteditable='true'><span class='glyphicon glyphicon-headphones'></span><strong> Música</strong></h1>
+		</div>
+	    
+		</div>
+	      </div>
+	    </div>";
+
+
+                    echo "<table class='table table-responsive-sm table-striped' id='myTable'>";
+                    echo "<thead>
+              
+                    <th class='text-nowrap text-center'>Nombre Archivo</th>
+                    <th class='text-nowrap text-center'>Subido por</th>
+                    <th class='text-nowrap text-center'>Fecha</th>
+                    <th>&nbsp;</th>
+                    </thead>";
+
+                    while($fila = mysql_fetch_array($retval))
+                    {
+
+                          // Listado normal
+                          echo "<tr>";   
+                          echo "<td align=center>".$fila['file_name']."</td>";
+                          echo "<td align=center>".$fila['user_name']."</td>";
+                          echo "<td align=center>".$fila['upload_on']."</td>";
+                          echo "<td class='text-nowrap'>";
+                          echo '<a href="download_music.php?file_name='.$fila['file_name'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-save"></span> Descargar</a>';
+                          echo '<a href="download_music.php?file_name='.$fila['file_name'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-volume-up"></span> Escuchar</a>';
+                          echo "</td>";
+                          echo "</tr>";
+                          $i++;
+                          $count++;
+                    }
+      
+                        echo "</table>";
+                        echo "<br><br><hr>";
+                        echo "<div class='row'>
+				<div class='col-sm-12'>
+				  <div class='panel panel-default'>
+				    <div class='panel-heading'>";
+			echo '<button type="button" class="btn btn-primary">Cantidad de Archivos:  ' .$count; echo '</button>';
+			echo "</div>
+	    
+				    </div>
+				</div>
+			      </div>";
+			
+			mysql_close($conn);  
+  
+   
+}
+
 
 
 
