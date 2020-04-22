@@ -513,7 +513,7 @@ function cargar_music(){
                           echo "<td align=center>".$fila['upload_on']."</td>";
                           echo "<td class='text-nowrap'>";
                           echo '<a href="download_music.php?file_name='.$fila['file_name'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-save"></span> Descargar</a>';
-                          echo '<a href="download_music.php?file_name='.$fila['file_name'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-volume-up"></span> Escuchar</a>';
+                          echo '<a href="listen_music.php?file_name='.$fila['file_name'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-volume-up"></span> Escuchar</a>';
                           echo "</td>";
                           echo "</tr>";
                           $i++;

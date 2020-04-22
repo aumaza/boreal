@@ -43,6 +43,7 @@
 	<link rel="stylesheet" href="/boreal/skeleton/css/fontawesome.css">
 	<link rel="stylesheet" href="/boreal/skeleton/css/fontawesome.min.css" >
 	<link rel="stylesheet" href="/boreal/skeleton/css/jquery.dataTables.min.css" >
+	<link rel="stylesheet" href="/boreal/skeleton/css/main.css" >
 
 	<script src="/boreal/skeleton/js/jquery-3.4.1.min.js"></script>
 	<script src="/boreal/skeleton/js/bootstrap.min.js"></script>
@@ -52,11 +53,13 @@
 	<script src="/boreal/skeleton/js/dataTables.editor.min.js"></script>
 	<script src="/boreal/skeleton/js/dataTables.select.min.js"></script>
 	<script src="/boreal/skeleton/js/dataTables.buttons.min.js"></script>
+	<script src="/boreal/skeleton/js/js_jquery.jplayer.js"></script>
 	
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet"  type="text/css" media="screen" href="login.css" />
 	
-	<script>
+<!-- Data Table Script -->
+<script>
 
       $(document).ready(function(){
       $('#myTable').DataTable({
@@ -80,6 +83,10 @@
   });
 
   </script>
+  <!-- END Data Table Script -->
+
+ 
+ 
   
   <style>
 .avatar {
@@ -230,6 +237,7 @@ if($conn)
 </div>
 </div>
 </div>
+
 
 
 </body>

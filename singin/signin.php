@@ -35,12 +35,13 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h1 class="panel-title text-center" contenteditable="true">Registro</h1>
+                                <h1 class="panel-title text-center" contenteditable="true"><strong>Registro</strong></h1>
                             </div>
                             <div class="panel-body">
                                 <p><strong>Alta Usuario</strong></p><hr>
-                                <p>Bienvenido al alta de Usuarioo, aquí deberá ingresar sus datos para crear su entorno de administración</p>
+                                <p>Bienvenido al alta de Usuario, aquí deberá ingresar sus datos para crear su entorno de administración</p>
                                 <p>Preste Atención a los datos solicitados y como deben ser ingresados</p>
+                                <p>Primero se le solicitarán sus Bio Datos y en el segundo paso generará un un usuario para ingresar a la WEB</p>
                                 <p>Comenzamos!?</p>
                             </div>
                         </div>
@@ -228,7 +229,7 @@
 <div class="form-group">
 <div class="col-sm-offset-2 col-sm-10">
 <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Registrarse</button>
-<button class="btn btn-danger"><a href="../index.html"><span class="glyphicon glyphicon-chevron-left"></a></span> Volver</button>
+
 
 
 
@@ -239,6 +240,7 @@
 </div>
 </div>
 </form>
+
 </div>
 </div>
 </div>
