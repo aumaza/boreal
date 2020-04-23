@@ -97,7 +97,7 @@
   <!-- User Info -->
       <div class="container-fluid">
       <div class="row">
-      <div class="col-md-12 text-center">
+      <div class="col-md-12 text-center"><br>
 	<a href="../../main.php"><button><span class="glyphicon glyphicon-chevron-left"></span> Volver</button></a>
         
 	<button><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['user'] ?></button>

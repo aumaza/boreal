@@ -278,6 +278,34 @@ $sql = "CREATE TABLE music (".
 }
 
 
+function create_table_video(){
+
+
+$sql = "CREATE TABLE video (".
+      "id INT AUTO_INCREMENT,".
+      "file_name VARCHAR(255),".
+      "user_name VARCHAR(60),".
+      "path_folder VARCHAR(60),".
+      "upload_on datetime NOT NULL,".
+      "status enum('1','0') NOT NULL DEFAULT 1,".
+      "PRIMARY KEY (id)); ";
+
+	mysql_select_db('boreal');
+	$retval = mysql_query($sql);
+	
+	if(!$retval)
+	{
+		mysql_error(); 	
+	}
+	
+	else
+	 {	
+		echo 'Table create Succesfully\n';
+	 }
+   
+}
+
+
 function upload_form(){
   
   echo "<form action='upload.php' method='post' enctype='multipart/form-data'>
@@ -487,6 +515,7 @@ function cargar_music(){
 		<div class='panel panel-default'>
 		  <div class='panel-heading'>
 		<h1 class='panel-title text-left' contenteditable='true'><span class='glyphicon glyphicon-headphones'></span><strong> Música</strong></h1>
+		<p>Te aconsejamos que antes de descargar un audio, lo escuches y luego si es de tu interés lo descargues.</p>
 		</div>
 	    
 		</div>
@@ -514,6 +543,74 @@ function cargar_music(){
                           echo "<td class='text-nowrap'>";
                           echo '<a href="download_music.php?file_name='.$fila['file_name'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-save"></span> Descargar</a>';
                           echo '<a href="listen_music.php?file_name='.$fila['file_name'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-volume-up"></span> Escuchar</a>';
+                          echo "</td>";
+                          echo "</tr>";
+                          $i++;
+                          $count++;
+                    }
+      
+                        echo "</table>";
+                        echo "<br><br><hr>";
+                        echo "<div class='row'>
+				<div class='col-sm-12'>
+				  <div class='panel panel-default'>
+				    <div class='panel-heading'>";
+			echo '<button type="button" class="btn btn-primary">Cantidad de Archivos:  ' .$count; echo '</button>';
+			echo "</div>
+	    
+				    </div>
+				</div>
+			      </div>";
+			
+			mysql_close($conn);  
+  
+   
+}
+
+
+function cargar_videos(){
+  
+  $sql = "SELECT * FROM video";
+         mysql_select_db('boreal');
+            $retval = mysql_query($sql);
+              
+
+                    $i = 0;
+                    $count = 0;
+                    
+       echo "<div class='row'>
+	      <div class='col-sm-12'>
+		<div class='panel panel-default'>
+		  <div class='panel-heading'>
+		<h1 class='panel-title text-left' contenteditable='true'><span class='glyphicon glyphicon-facetime-video'></span><strong> Videos</strong></h1>
+		<p>Te aconsejamos que antes de descargar un video, lo veas directamente desde la web, para no recargar la red.</p>
+		</div>
+	    
+		</div>
+	      </div>
+	    </div>";
+
+
+                    echo "<table class='table table-responsive-sm table-striped' id='myTable'>";
+                    echo "<thead>
+              
+                    <th class='text-nowrap text-center'>Nombre Archivo</th>
+                    <th class='text-nowrap text-center'>Subido por</th>
+                    <th class='text-nowrap text-center'>Fecha</th>
+                    <th>&nbsp;</th>
+                    </thead>";
+
+                    while($fila = mysql_fetch_array($retval))
+                    {
+
+                          // Listado normal
+                          echo "<tr>";   
+                          echo "<td align=center>".$fila['file_name']."</td>";
+                          echo "<td align=center>".$fila['user_name']."</td>";
+                          echo "<td align=center>".$fila['upload_on']."</td>";
+                          echo "<td class='text-nowrap'>";
+                          echo '<a href="download_video.php?file_name='.$fila['file_name'].'" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-save"></span> Descargar</a>';
+                          echo '<a href="view_video.php?file_name='.$fila['file_name'].'" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Ver Video</a>';
                           echo "</td>";
                           echo "</tr>";
                           $i++;

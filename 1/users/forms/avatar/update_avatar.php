@@ -97,7 +97,7 @@
   <!-- User Info -->
       <div class="container-fluid">
       <div class="row">
-      <div class="col-md-12 text-center">
+      <div class="col-md-12 text-center"><br>
 	<a href="../../main.php"><button><span class="glyphicon glyphicon-chevron-left"></span> Volver</button></a>
         
 	<button><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['user'] ?></button>
@@ -113,6 +113,16 @@
 	
 	
 <body >
+<div class="section"><br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                    
+                    <div class="alert alert-success" role="alert">
+                     <h1><strong>Importante: </strong></h1>
+                     <h3>Al subir imágenes, procure que no aparezcan niños en las mismas.<br>Como así tampoco que sean de mal gusto u obscenas. </h3>
+                    </div>
+                                       
 <div class="section"><br>
             <div class="container-fluid">
                 <div class="row">

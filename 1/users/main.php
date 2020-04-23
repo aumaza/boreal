@@ -43,7 +43,7 @@
 	<link rel="stylesheet" href="/boreal/skeleton/css/fontawesome.css">
 	<link rel="stylesheet" href="/boreal/skeleton/css/fontawesome.min.css" >
 	<link rel="stylesheet" href="/boreal/skeleton/css/jquery.dataTables.min.css" >
-	<link rel="stylesheet" href="/boreal/skeleton/css/main.css" >
+	
 
 	<script src="/boreal/skeleton/js/jquery-3.4.1.min.js"></script>
 	<script src="/boreal/skeleton/js/bootstrap.min.js"></script>
@@ -53,7 +53,7 @@
 	<script src="/boreal/skeleton/js/dataTables.editor.min.js"></script>
 	<script src="/boreal/skeleton/js/dataTables.select.min.js"></script>
 	<script src="/boreal/skeleton/js/dataTables.buttons.min.js"></script>
-	<script src="/boreal/skeleton/js/js_jquery.jplayer.js"></script>
+	
 	
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet"  type="text/css" media="screen" href="login.css" />
@@ -105,6 +105,7 @@
       <div class="container-fluid">
       <div class="row">
       <div class="col-md-12 text-center">
+      <br>
 	<a href="../../logout.php"><button><span class="glyphicon glyphicon-log-out"></span> Salir</button></a>
         
 	<button><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['user'] ?></button>
@@ -119,7 +120,7 @@
 	<!-- End User Info -->
 	
 	</head>
-<body >
+<body>
 
 <div class="section"><br>
             <div class="container-fluid">
@@ -139,10 +140,10 @@
 	    <div class="panel-heading">
 	    <h4><strong>El material dentro de Boreal es compartido y usado por todos.</strong></h4>
 	    <a href="forms/avatar/update_avatar.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Avatar</button></a>
-	    <a href="forms/images/upload_img.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-cloud-upload"></span> Subir Imagen</button></a>
 	    <a href="forms/tabs/upload_tabs.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Tablaturas</button></a>
             <a href="forms/theory/upload_theory.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Teoría</button></a>
             <a href="forms/music/upload_music.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Música</button></a>
+            <a href="forms/videos/upload_video.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Videos</button></a>
             </div>
 	    
      </div>
@@ -161,6 +162,7 @@
             <button type="submit" class="btn btn-success navbar-btn" name="C"><span class="glyphicon glyphicon-book"></span> Teoría</button>
 	    <button type="submit" class="btn btn-success navbar-btn" name="D"><span class="glyphicon glyphicon-music"></span> Tablaturas</button>
             <button type="submit" class="btn btn-success navbar-btn" name="E"><span class="glyphicon glyphicon-eye-open"></span> Otros Usuarios</button>
+            <button type="submit" class="btn btn-success navbar-btn" name="F"><span class="glyphicon glyphicon-facetime-video"></span> Vdeos</button>
            </div>
 	    
      </div>
@@ -184,7 +186,6 @@ if($conn)
 
                     user_bio($nombre);
                     break;
-
 
                case isset($_POST['B']):
 
@@ -210,7 +211,7 @@ if($conn)
                     
                 case isset($_POST['F']):
 
-                    
+                    cargar_videos();
                     break;
                     
                               
