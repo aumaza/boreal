@@ -61,7 +61,7 @@
 <!-- User Info -->
       <div class="container-fluid">
       <div class="row">
-      <div class="col-md-12 text-center">
+      <div class="col-md-12 text-center"><br>
 	<a href="main.php"><button><span class="glyphicon glyphicon-chevron-left"></span> Volver</button></a>
         
 	<button><span class="glyphicon glyphicon-user"></span> Usuario: <?php echo $_SESSION['user'] ?></button>
@@ -95,7 +95,7 @@
                     <div class="col-md-4"><img src="../../img/edit-img.png" class="center-block img-responsive img-thumbnail"></div>
                     <div class="col-md-8">
                         
-                        <form action="formEdit.php" method="POST" class="form-horizontal" role="form">
+                        <form action="form_edit.php" method="POST" class="form-horizontal" role="form">
                         <input type="hidden" id="id" name="id" value="<?php echo $fila['id']; ?>" />
                         
                             <div class="form-group">
@@ -125,7 +125,7 @@
             <div class="col-sm-2">
             <h4><span class="label label-default">Instrumento Ejecutado</span><br><br></h4>
             <select name="instrumento">
-              <option value="<?php echo $fila['instrumento']; ?>">Seleccionar</option>
+              <option value="">Seleccionar</option>
               
              <?php
              
@@ -138,13 +138,17 @@
 
               if($res)
               {
-                
-                  while ($valores = mysql_fetch_array($res))
-                    {
-                        echo '<option value="'.$valores[descripcion].'">'.$valores[descripcion].'</option>';
+		 
+		 
+                  while ($valores = mysql_fetch_array($res)){
+                  
+                      	  echo '<option value="'.$valores[descripcion].'" '.(($fila['instrumento']== $valores[descripcion])?'selected="selected"':"").'>'.$valores[descripcion].'</option>';
+                        }
+                        
                     }
+                    
                 }
-                }
+               // }
 
                 
 
@@ -155,7 +159,7 @@
             <div class="col-sm-2">
             <h4><span class="label label-default">Género Musical</span><br><br></h4>
             <select name="genre">
-              <option value="<?php echo $fila['genre']; ?>">Seleccionar</option>
+              <option value="">Seleccionar</option>
               
              <?php
              
@@ -171,7 +175,8 @@
                 
                   while ($valores = mysql_fetch_array($res))
                     {
-                        echo '<option value="'.$valores[descripcion].'">'.$valores[descripcion].'</option>';
+                        echo '<option value="'.$valores[descripcion].'" '.(($fila['genre']== $valores[descripcion])?'selected="selected"':"").'>'.$valores[descripcion].'</option>';
+                        
                     }
                 }
                 }
@@ -186,7 +191,7 @@
             <div class="col-sm-2">
             <h4><span class="label label-default">Provincias</span><br><br></h4>
             <select name="provincia">
-              <option value="<?php echo $fila['provincia']; ?>">Seleccionar</option>
+              <option value="">Seleccionar</option>
               
              <?php
              
@@ -202,7 +207,8 @@
                 
                   while ($valores = mysql_fetch_array($res))
                     {
-                        echo '<option value="'.$valores[descripcion].'">'.$valores[descripcion].'</option>';
+                        echo '<option value="'.$valores[descripcion].'" '.(($fila['provincia']== $valores[descripcion])?'selected="selected"':"").'>'.$valores[descripcion].'</option>';
+                       
                     }
                 }
                 }
@@ -216,7 +222,7 @@
             <div class="col-sm-2">
             <h4><span class="label label-default">Localidad</span><br><br></h4>
             <select name="localidad">
-              <option value="<?php echo $fila['localidad']; ?>">Seleccionar</option>
+              <option value="">Seleccionar</option>
               
              <?php
              
@@ -232,7 +238,8 @@
                 
                   while ($valores = mysql_fetch_array($res))
                     {
-                        echo '<option value="'.$valores[descripcion].'" >'.$valores[descripcion].'</option>';
+                        echo '<option value="'.$valores[descripcion].'" '.(($fila['localidad']== $valores[descripcion])?'selected="selected"':"").'>'.$valores[descripcion].'</option>';
+                       
                     }
                 }
                 }

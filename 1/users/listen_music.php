@@ -73,7 +73,7 @@
                mp3: "uploads/music/<?php echo $audio; ?>",
                 ogg: "uploads/music/<?php echo $audio; ?>",
                 flac: "uploads/music/<?php echo $audio; ?>"
-            }).jPlayer("stop"); // auto play
+            }).jPlayer("play"); // auto play
         },
         ended: function (event) {
             $(this).jPlayer("play");
@@ -158,8 +158,6 @@
                     <div id="jp_interface_1" class="jp-interface">
                         <ul class="jp-controls">
                             <li><a href="uploads/music/<?php echo $audio; ?>" class="jp-play" tabindex="1">play</a></li>
-                            <li><a href="uploads/music/<?php echo $audio; ?>" class="jp-pause" tabindex="1">pause</a></li>
-                            <li><a href="uploads/music/<?php echo $audio; ?>" class="jp-stop" tabindex="1">stop</a></li>
                             <li><a href="#" class="jp-mute" tabindex="1">mute</a></li>
                             <li><a href="#" class="jp-unmute" tabindex="1">unmute</a></li>
                         </ul>
