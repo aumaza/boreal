@@ -120,7 +120,7 @@
 	<!-- End User Info -->
 	
 	</head>
-<body>
+
 
 <div class="section"><br>
             <div class="container-fluid">
@@ -139,6 +139,7 @@
 	<div class="panel panel-default">
 	    <div class="panel-heading">
 	    <h4><strong>El material dentro de Boreal es compartido y usado por todos.</strong></h4>
+	    <a href="../../singin/change_pass.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Password</button></a>
 	    <a href="forms/avatar/update_avatar.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Avatar</button></a>
 	    <a href="forms/tabs/upload_tabs.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Tablaturas</button></a>
             <a href="forms/theory/upload_theory.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Teoría</button></a>
