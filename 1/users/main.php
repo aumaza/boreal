@@ -11,7 +11,15 @@
         
         while($fila = mysql_fetch_array($retval)){
 	  $nombre = $fila['nombre'];
+	  
 	  }
+	  
+	$sqla = "SELECT avatar FROM users where nombreApellido = '$nombre'";
+	mysql_select_db('boreal');
+	$valor = mysql_query($sqla);
+	while($row = mysql_fetch_array($valor)){
+	  $avatar = $row['avatar'];
+	}
         
 	
 	      
@@ -84,9 +92,7 @@
 
   </script>
   <!-- END Data Table Script -->
-
- 
- 
+  
   
   <style>
 .avatar {
@@ -126,9 +132,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel panel-success">
+                      <div class="panel panel-success">
                             <div class="panel-heading">
-                                <h1 class="panel-title text-left" contenteditable="true"><img src="../../img/leaf-img.png" alt="Avatar" class="avatar" ><strong> Dashboard Usuario:</strong> <?php echo $nombre; ?></h1>
+				
+                                <h1 class="panel-title text-left" contenteditable="true"><img src="<?php echo $avatar; ?>" alt="Avatar" class="avatar" ><strong> Dashboard Usuario:</strong> <?php echo $nombre; ?></h1>
                             
                             </div>
                            
@@ -140,7 +147,7 @@
 	    <div class="panel-heading">
 	    <h4><strong>El material dentro de Boreal es compartido y usado por todos.</strong></h4>
 	    <a href="../../singin/change_pass.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Password</button></a>
-	    <a href="forms/avatar/update_avatar.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Avatar</button></a>
+	    <a href="update_avatar.php"><button type="submit" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-refresh"></span> Cambiar Avatar</button></a>
 	    <a href="forms/tabs/upload_tabs.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Tablaturas</button></a>
             <a href="forms/theory/upload_theory.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Teoría</button></a>
             <a href="forms/music/upload_music.php"><button type="submit" class="btn btn-warning navbar-btn" ><span class="glyphicon glyphicon-cloud-upload"></span> Subir Música</button></a>

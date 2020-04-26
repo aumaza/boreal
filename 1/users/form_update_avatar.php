@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-md-12">
 
-<?php include "../../../../connection/connection.php";
+<?php include "../../connection/connection.php";
       include "../../functions/functions.php";
 
 	session_start();
@@ -93,53 +93,50 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
            $sqlInsert = "UPDATE users set avatar = '$targetFilePath' where nombreApellido = '$nombre'";
 			   mysql_select_db('boreal');
 			  $insert = mysql_query($sqlInsert);
-           // mysql_select_db('boreal');
-           //$insert = mysql_query("INSERT into images (file_name, upload_on,user_name) VALUES ('".$fileName."', NOW(),'$nombre')");
+           
            
             if($insert){
             
 			  echo '<div class="alert alert-success" role="alert">';
-			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/success-img.png" alt="Avatar" class="avatar" ><strong> Base de Datos Actualizada. El Archivo '.$fileName. ' se ha subido correctamente..</strong>';
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../img/success-img.png" alt="Avatar" class="avatar" ><strong> Base de Datos Actualizada. El Archivo '.$fileName. ' se ha subido correctamente..</strong>';
                           echo "</div><hr>";
                           echo '<div class="alert alert-success" role="alert">';
-                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
                           echo "</div><hr>";
                           
-            
-                //$statusMsg = "\nBase de Datos Actualizada. \nEl Archivo ".$fileName. " se ha subido correctamente.";
-                
+                                           
             }else{
 		  
 			  echo '<div class="alert alert-success" role="alert">';
-			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/success-img.png" alt="Avatar" class="avatar" ><strong>El Archivo '.$fileName. ' se ha subido correctamente.</strong>';
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../img/success-img.png" alt="Avatar" class="avatar" ><strong> El Archivo '.$fileName. ' se ha subido correctamente.</strong>';
                           echo "</div><hr>";
                           echo '<div class="alert alert-success" role="alert">';
-                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
                           echo "</div><hr>"; 
                 
             } 
         }else{
 			  echo '<div class="alert alert-warning" role="alert">';
-			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/think-img.png" alt="Avatar" class="avatar" ><strong> Ups. Hubo un error subiendo el Archivo.</strong>';
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../img/think-img.png" alt="Avatar" class="avatar" ><strong> Ups. Hubo un error subiendo el Archivo.</strong>';
                           echo "</div><hr>";
                           echo '<div class="alert alert-success" role="alert">';
-                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
                           echo "</div><hr>";
         }
     }else{
 			  echo '<div class="alert alert-danger" role="alert">';
-			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/aircraft-crash64-img.png" alt="Avatar" class="avatar" ><strong> Ups, solo archivos con extensión: MP3, OGG, FLAC son soportados.</strong>';
+			  echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../img/aircraft-crash64-img.png" alt="Avatar" class="avatar" ><strong> Ups, solo archivos con extensión: MP3, OGG, FLAC son soportados.</strong>';
 			  echo "</div><hr>";
                           echo '<div class="alert alert-success" role="alert">';
-                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
                           echo "</div><hr>";
     }
 }else{
 			  echo '<div class="alert alert-info" role="alert">';
-                          echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../../../img/refresh-img.png" alt="Avatar" class="avatar" ><strong> Por favor, seleccione al archivo a subir.</strong>';
+                          echo '<h1 class="panel-title text-left" contenteditable="true"><img src="../../img/refresh-img.png" alt="Avatar" class="avatar" ><strong> Por favor, seleccione al archivo a subir.</strong>';
                           echo "</div><hr>";
                           echo '<div class="alert alert-success" role="alert">';
-                          echo "<a href='../../main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
+                          echo "<a href='main.php'><button class='btn btn-warning navbar-btn'><span class='glyphicon glyphicon-chevron-left'></span> Volver</button></a>";
                           echo "</div><hr>";
 }
 
