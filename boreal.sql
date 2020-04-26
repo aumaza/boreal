@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-04-2020 a las 15:20:18
+-- Tiempo de generación: 26-04-2020 a las 16:59:47
 -- Versión del servidor: 5.5.65-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `boreal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `avatar`
+--
+
+CREATE TABLE `avatar` (
+  `id` int(11) NOT NULL,
+  `file_name` varchar(255) DEFAULT NULL,
+  `user_name` varchar(60) DEFAULT NULL,
+  `path_folder` varchar(60) DEFAULT NULL,
+  `upload_on` datetime NOT NULL,
+  `status` enum('1','0') NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -268,6 +283,7 @@ CREATE TABLE `users` (
   `provincia` varchar(40) NOT NULL,
   `localidad` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `avatar` varchar(80) DEFAULT NULL,
   `observaciones` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -275,10 +291,10 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `nombreApellido`, `sexo`, `instrumento`, `genre`, `provincia`, `localidad`, `email`, `observaciones`) VALUES
-(1, 'Florentina Maza', 'Femenino', 'Piano', 'Pop', 'Buenos Aires', 'Lomas de Zamora', 'floren@gmail.com', 'ninguna'),
-(2, 'Augusto Maza', 'Masculino', 'Guitarra', 'Rock', 'Buenos Aires', 'Banfield', 'debianmaza@gmail.com', 'Piano Bateria Bajo'),
-(8, 'Ignacio Maza', 'Masculino', 'Guitarra', 'Pop', 'Buenos Aires', 'Adrogue', 'nacho@gmail.com', '');
+INSERT INTO `users` (`id`, `nombreApellido`, `sexo`, `instrumento`, `genre`, `provincia`, `localidad`, `email`, `avatar`, `observaciones`) VALUES
+(1, 'Florentina Maza', 'Femenino', 'Piano', 'Pop', 'Buenos Aires', 'Lomas de Zamora', 'floren@gmail.com', 'uploads/avatar/female-user-img.png', 'ninguna'),
+(2, 'Augusto Maza', 'Masculino', 'Guitarra', 'Rock', 'Buenos Aires', 'Banfield', 'debianmaza@gmail.com', 'uploads/avatar/user-blue-img.png', 'Piano Bateria Bajo'),
+(8, 'Ignacio Maza', 'Masculino', 'Guitarra', 'Pop', 'Buenos Aires', 'Adrogue', 'nacho@gmail.com', '../../img/leaf-img.png', '');
 
 -- --------------------------------------------------------
 
@@ -331,6 +347,12 @@ INSERT INTO `video` (`id`, `file_name`, `user_name`, `path_folder`, `upload_on`,
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `avatar`
+--
+ALTER TABLE `avatar`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `genre`
@@ -401,6 +423,12 @@ ALTER TABLE `video`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `avatar`
+--
+ALTER TABLE `avatar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `genre`
