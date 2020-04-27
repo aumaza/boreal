@@ -34,14 +34,16 @@ $sql = "CREATE TABLE users(".
     		$provincia = mysql_real_escape_string($_POST["provincia"], $conn);
     		$localidad = mysql_real_escape_string($_POST["localidad"], $conn);
     		$email = mysql_real_escape_string($_POST["email"], $conn);
+    		$avatar = "uploads/avatar/user-blue-img.png";
     		$descripcion = mysql_real_escape_string($_POST["descripcion"], $conn);
+    		
     		
 	
 	
 $sqlInsert = "INSERT INTO users ".
-"(nombreApellido,sexo,instrumento,genre,provincia,localidad,email,observaciones)".
+"(nombreApellido,sexo,instrumento,genre,provincia,localidad,email,avatar,observaciones)".
 "VALUES ".
-"('$nombreApellido','$sexo','$instrumento','$genre','$provincia','$localidad','$email','$descripcion')";
+"('$nombreApellido','$sexo','$instrumento','$genre','$provincia','$localidad','$email','$avatar','$descripcion')";
 
 // mysql_select_db('breaktime');
 $q = mysql_query($sqlInsert,$conn);
