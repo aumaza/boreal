@@ -11,6 +11,7 @@ $sql = "CREATE TABLE users(".
       "provincia VARCHAR(40) NOT NULL,".
       "localidad VARCHAR(20) NOT NULL,".
       "email VARCHAR(50) NOT NULL,".
+      "avatar VARCHAR(80) NOT NULL,".
       "observaciones VARCHAR(255) NOT NULL,".
       "PRIMARY KEY (id)); ";
 
