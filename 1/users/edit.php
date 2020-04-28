@@ -104,7 +104,7 @@
 				</div>
 
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Su Nombre y Apellido"  value="<?php echo $fila['nombreApellido']; ?>">
+				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Su Nombre y Apellido"  value="<?php echo $fila['nombreApellido']; ?>" readonly>
 			</div>
 				</div>
 
